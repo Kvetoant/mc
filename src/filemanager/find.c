@@ -713,7 +713,8 @@ find_parameters (char **start_dir, ssize_t * start_dir_len,
 
     file_case_sens_cbox = check_new (y1++, x1, options.file_case_sens, file_case_label);
     add_widget (find_dlg, file_case_sens_cbox);
-    only_directories_cbox = check_new (cbox_position--, 3, options.only_directories, file_only_directories_label);
+
+    only_directories_cbox = check_new (y1++, x1, options.only_directories, file_only_directories_label);
     add_widget (find_dlg, only_directories_cbox);
 
 #ifdef HAVE_CHARSET
@@ -1376,6 +1377,7 @@ do_search (WDialog * h)
                     {
 			is_dir = TRUE;
                         push_directory (tmp_vpath);
+		    }
                     else
                         vfs_path_free (tmp_vpath);
                 }
