@@ -1362,7 +1362,7 @@ do_search (WDialog * h)
 
 	    is_dir = FALSE;
 
-            if ((subdirs_left != 0) && options.find_recurs && (directory != NULL))
+            if (options.find_recurs && (directory != NULL))
             {                   /* Can directory be NULL ? */
                 /* handle relative ignore dirs here */
                 if (options.ignore_dirs_enable && find_ignore_dir_search (dp->d_name))
